@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Calculator</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" rel="stylesheet"/>"
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <label for="income" class="tooltip-container" title="Enter your income">
+      Enter gross annual income:
+      <i id="gi" class="fas fa-question-circle"></i>
+      <div id="hide">Gross annual income is your total salary in a year before any deductions</div>
+      <span class="tooltip">Enter your income</span>
+    </label>
+    <div class="tooltip-container">
+      <input type="text" id="income">
+      <span class="error-icon">
+        <i class='bx bx-error-circle'></i>
+      </span>
+      <span class="tooltip">Please enter numbers only</span>
+    </div>
+    <br>
+    <label for="extraIncome" class="tooltip-container" title="Enter any extra income">
+     Enter extra income:
+      <i id="ei" class="fas fa-question-circle"></i>
+      <div id="hide1">Extra income is the income without nnormal income</div>
+      <span class="tooltip">Enter any extra income</span>
+    </label>
+    <div class="tooltip-container">
+      <input type="text" id="extraIncome">
+      <span class="error-icon">
+        <i class='bx bx-error-circle'></i>
+      </span>
+      <span class="tooltip">Please enter numbers only</span>
+    </div>
+    <br>
+    <label for="age" class="tooltip-container" title="Select your age group">
+        Enter age group:
+        <i id="ag" class="fas fa-question-circle"></i>
+        <div id="hide3">age group which you belong to</div>
+      </label>
+      <select id="age">
+        <option value="<40">&lt;40</option>
+        <option value=">=40 & <60">&ge;40 &lt;60</option>
+        <option value=">=60">&ge;60</option>
+      </select>
+      <br>
+      <br>
+    <label for="deductions" class="tooltip-container" title="Enter deductions">
+      Enter total applicable Deductions:
+      <i id="de" class="fas fa-question-circle"></i>
+      <div id="hide2">Deductions is the tax free income</div>
+      <span class="tooltip">Enter deductions</span>
+    </label>
+    <div class="tooltip-container">
+      <input type="text" id="deductions">
+      <span class="error-icon"> 
+        <i class='bx bx-error-circle'></i>
+    </span>
+      <span class="tooltip">Please enter numbers only</span>
+    </div>
+    <br>
+    <button onclick="validateAndCalculate()">Submit</button>
+  </div>
+
+  <div id="modal">
+    <div class="modal-content">
+      <div id="modalResult"></div>
+      <div id="modalResult1"></div>
+      <div id="modalResult2"></div>
+      <br>
+      <br>
+      <button class="mbutton" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
